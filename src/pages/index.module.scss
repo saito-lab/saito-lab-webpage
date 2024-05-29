@@ -1,0 +1,14 @@
+@import "../styles/global.scss";
+
+.flex {
+    min-height: calc(100vh - 200px);
+    padding: 20px 0;
+    margin-bottom: 50px;
+
+    display: flex;
+    justify-content: space-around;
+    .center {
+        width: 80%;
+        height: 600px;
+    }
+}

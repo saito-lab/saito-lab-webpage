@@ -1,0 +1,29 @@
+@import "../styles/global.scss";
+
+.container {
+    min-height: calc(100vh - 200px);
+    padding: 0 200px;
+    margin-bottom: 50px;
+    .staffList {
+        padding: 0;
+        list-style: none;
+        .item {
+            .post {
+                margin-right: 10px;
+            }
+            .name {
+            }
+        }
+    }
+    .studentList {
+        padding: 0;
+        list-style: none;
+        .item {
+            .post {
+                margin-right: 10px;
+            }
+            .name {
+            }
+        }
+    }
+}

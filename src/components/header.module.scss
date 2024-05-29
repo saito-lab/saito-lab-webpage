@@ -1,0 +1,31 @@
+@import "../styles/global.scss";
+
+.header {
+    .logoContainer {
+        max-height: 150px;
+        padding: 15px 250px;
+        .logo {
+            height: 70px;
+        }
+    }
+    .menu {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0 350px;
+        margin: 0;
+        background: #000;
+
+        .item {
+            font-family: sans-serif;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            .link {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}

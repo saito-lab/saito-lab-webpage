@@ -1,0 +1,26 @@
+@import "../styles/global.scss";
+
+.container {
+    min-height: calc(100vh - 200px);
+    padding: 0 200px;
+    margin-bottom: 50px;
+    .projectContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30%, auto));
+        gap: 20px;
+        .project {
+            .picture {
+                object-fit: cover;
+                width: 320px;
+                height: 200px;
+                
+                transition: all .2s ease-in;
+                
+                &:hover {
+                    transform: scale(1.01);
+                    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+                }
+            }
+        }
+    }
+}

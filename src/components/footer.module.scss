@@ -1,0 +1,12 @@
+@import "../styles/global.scss";
+
+.footer {
+    height: 50px;
+    margin: 0 auto;
+    color: #fff;
+    background: #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
