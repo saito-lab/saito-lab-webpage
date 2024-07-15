@@ -2,44 +2,72 @@ import * as React from "react"
 import * as styles from "./index.module.scss"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import { Splide, SplideSlide } from '@splidejs/react-splide'
-import '@splidejs/react-splide/css'
+import { Link } from "gatsby"
 
 const IndexPage = () => {
-  const images = [
+  const projects = [
     {
-      alt: 'sampel 1',
-      src: '/sample1.jpg',
+      id: 1,
+      image: '/sample1.jpg',
     },
     {
-      alt: 'sampel 2',
-      src: '/sample2.jpg',
+      id: 2,
+      image: '/sample2.jpg',
     },
     {
-      alt: 'sampel 3',
-      src: '/sample3.jpg',
-    }
+      id: 3,
+      image: '/sample3.jpg',
+    },
+    {
+      id: 1,
+      image: '/sample1.jpg',
+    },
+    {
+      id: 2,
+      image: '/sample2.jpg',
+    },
+    {
+      id: 3,
+      image: '/sample3.jpg',
+    },
+    {
+      id: 1,
+      image: '/sample1.jpg',
+    },
+    {
+      id: 2,
+      image: '/sample2.jpg',
+    },
+    {
+      id: 3,
+      image: '/sample3.jpg',
+    },
+    {
+      id: 1,
+      image: '/sample1.jpg',
+    },
+    {
+      id: 2,
+      image: '/sample2.jpg',
+    },
+    {
+      id: 3,
+      image: '/sample3.jpg',
+    },
   ]
-  const splideOption = {
-    rewind: true,
-    height: 600,
-    width: '100%',
-    gap: '1rem',
-    autoplay: true,
-    interval: 2000,
-  }
   return (
     <main>
       <Header />
-      <div className={styles.flex}>
-        <div className={styles.center}>
-          <Splide aria-label="Top images" options={splideOption}>
-            {images.map((image, i) => (
-              <SplideSlide key={i}>
-                <img src={image.src} alt={image.alt} />
-              </SplideSlide>
-            ))}
-          </Splide>
+      <div className={styles.container}>
+        <h1>Project</h1>
+        <div className={styles.projectContainer}>
+          {projects.map((project, i) => (
+            <div className={styles.project} key={i}>
+              <Link to={`/project/${project.id}/`}>
+                <img src={project.image} className={styles.picture} />
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
       <Footer />

@@ -1,31 +1,22 @@
 @import "../styles/global.scss";
 
 .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 15px 200px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
     .logoContainer {
         max-height: 150px;
-        padding: 15px 250px;
         .logo {
             height: 70px;
         }
     }
-    .menu {
-        height: 50px;
-        display: flex;
-        align-items: center;
-        list-style: none;
-        padding: 0 350px;
-        margin: 0;
-        background: #000;
-
-        .item {
-            font-family: sans-serif;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-            .link {
-                color: #fff;
-                text-decoration: none;
-            }
+    .linkContainer {
+        .link {
+            color: #000;
+            text-decoration: none;
         }
     }
 }
