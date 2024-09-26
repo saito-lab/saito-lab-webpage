@@ -2,48 +2,12 @@ import * as React from "react"
 import * as styles from "./about.module.scss"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import { graphql } from "gatsby"
 
-const ProjectPage = () => {
-  const staffs = [
-    {
-      post: '教授',
-      name: '齊藤 哲也',
-    }
-  ]
-  const students = [
-    {
-      post: 'M2',
-      name: '田中 栄治',
-    },
-    {
-      post: 'M2',
-      name: '田中 栄治',
-    },
-    {
-      post: 'M2',
-      name: '田中 栄治',
-    },
-    {
-      post: 'M2',
-      name: '田中 栄治',
-    },
-    {
-      post: 'M2',
-      name: '田中 栄治',
-    },
-    {
-      post: 'M2',
-      name: '田中 栄治',
-    },
-    {
-      post: 'M2',
-      name: '田中 栄治',
-    },
-    {
-      post: 'M2',
-      name: '田中 栄治',
-    },
-  ]
+const ProjectPage = ({ data }) => {
+  const staffs = data.allMicrocmsMembers.edges.filter((edge) => edge.node.group.includes('Staff'));
+  const students = data.allMicrocmsMembers.edges.filter((edge) => edge.node.group.includes('Student'));
+
   return (
     <main>
       <Header />
@@ -57,16 +21,16 @@ const ProjectPage = () => {
         <ul className={styles.staffList}>
           {staffs.map((staff, i) => (
             <li className={styles.item} key={i}>
-              <span className={styles.post}>{staff.post}</span>
-              <span className={styles.name}>{staff.name}</span>
+              <span className={styles.post}>{staff.node.position}</span>
+              <span className={styles.name}>{staff.node.name}</span>
             </li>))}
         </ul>
         <h2>Student</h2>
         <ul className={styles.studentList}>
           {students.map((student, i) => (
             <li className={styles.item} key={i}>
-              <span className={styles.post}>{student.post}</span>
-              <span className={styles.name}>{student.name}</span>
+              <span className={styles.post}>{student.node.position}</span>
+              <span className={styles.name}>{student.node.name}</span>
             </li>))}
         </ul>
       </div>
@@ -74,6 +38,21 @@ const ProjectPage = () => {
     </main>
   )
 }
+
+export const query = graphql`
+{
+  allMicrocmsMembers(sort: [{ createdAt: DESC }]) {
+    edges {
+      node {
+        id
+        group
+        position
+        name
+      }
+    }
+  }
+}`
+
 
 export default ProjectPage
 
