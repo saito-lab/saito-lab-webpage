@@ -23,10 +23,16 @@ module.exports = {
         serviceId: process.env.MICRO_CMS_SERVICE_ID,
         apis: [
           {
-            endpoint: 'sample-posts',
+            endpoint: 'projects',
+            format: 'list',
           },
           {
-            endpoint: 'works',
+            endpoint: 'about',
+            format: 'object',
+          },
+          {
+            endpoint: 'members',
+            format: 'list',
           },
         ],
       },
