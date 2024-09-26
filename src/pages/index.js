@@ -2,59 +2,11 @@ import * as React from "react"
 import * as styles from "./index.module.scss"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
-const IndexPage = () => {
-  const projects = [
-    {
-      id: 1,
-      image: '/sample1.jpg',
-    },
-    {
-      id: 2,
-      image: '/sample2.jpg',
-    },
-    {
-      id: 3,
-      image: '/sample3.jpg',
-    },
-    {
-      id: 1,
-      image: '/sample1.jpg',
-    },
-    {
-      id: 2,
-      image: '/sample2.jpg',
-    },
-    {
-      id: 3,
-      image: '/sample3.jpg',
-    },
-    {
-      id: 1,
-      image: '/sample1.jpg',
-    },
-    {
-      id: 2,
-      image: '/sample2.jpg',
-    },
-    {
-      id: 3,
-      image: '/sample3.jpg',
-    },
-    {
-      id: 1,
-      image: '/sample1.jpg',
-    },
-    {
-      id: 2,
-      image: '/sample2.jpg',
-    },
-    {
-      id: 3,
-      image: '/sample3.jpg',
-    },
-  ]
+const IndexPage = ({ data }) => {
+  const projects = data.allMicrocmsProjects.edges;
+  
   return (
     <main>
       <Header />
@@ -63,8 +15,8 @@ const IndexPage = () => {
         <div className={styles.projectContainer}>
           {projects.map((project, i) => (
             <div className={styles.project} key={i}>
-              <Link to={`/project/${project.id}/`}>
-                <img src={project.image} className={styles.picture} />
+              <Link to={`/project/${project.node.id}/`}>
+                <img src={project.node.images[0].url} className={styles.picture} />
               </Link>
             </div>
           ))}
@@ -74,6 +26,25 @@ const IndexPage = () => {
     </main>
   )
 }
+
+export const query = graphql`
+{
+  allMicrocmsProjects(sort: [{ createdAt: DESC }]) {
+    edges {
+      node {
+        id
+        title
+        description
+        images {
+          url
+          width
+          height
+        }
+      }
+    }
+  }
+}
+`
 
 export default IndexPage
 
