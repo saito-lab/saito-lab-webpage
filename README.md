@@ -8,6 +8,7 @@
 cp .env.example .env.development
 # Edit .env.development
 npm i
+npm run clean
 npm start
 ```
 
