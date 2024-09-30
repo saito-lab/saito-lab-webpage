@@ -52,4 +52,6 @@ export const query = graphql`
 
 export default MicrocmsProjectPage
 
-export const Head = () => <title>Project - 明星大学 建築学部 齊藤哲也 研究室</title>
+export const Head = ({ data }) => {
+  return <title>Project [{data.microcmsProjects.title}] - 明星大学 建築学部 齊藤哲也 研究室</title>
+}
