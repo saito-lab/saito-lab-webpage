@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
         <div className={styles.projectContainer}>
           {projects.map((project, i) => (
             <div className={styles.project} key={i}>
-              <Link to={`/project/${project.node.id}/`}>
+              <Link to={`/projects/${project.node.id}/`}>
                 <img src={project.node.images[0].url} className={styles.picture} />
               </Link>
             </div>
