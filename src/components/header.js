@@ -7,7 +7,7 @@ const Header = () => {
         <header className={styles.header}>
             <div className={styles.logoContainer}>
                 <Link to="/">
-                    <img src="/logo-large.jpg" className={styles.logo} />
+                    <img src="./logo-large.jpg" className={styles.logo} />
                 </Link>
             </div>
             <div className={styles.linkContainer}>
