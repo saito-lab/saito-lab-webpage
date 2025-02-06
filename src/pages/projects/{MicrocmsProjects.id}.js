@@ -9,11 +9,13 @@ import * as styles from "./{MicrocmsProjects.id}.module.scss"
 const MicrocmsProjectPage = ({ data }) => {
   const splideOption = {
     rewind: true,
-    height: 600,
+    // height: 600,
     width: '100%',
     gap: '1rem',
     autoplay: true,
     interval: 2000,
+    cover: true,
+		heightRatio: 0.5,
   }
   const project = data.microcmsProjects;
   return (
