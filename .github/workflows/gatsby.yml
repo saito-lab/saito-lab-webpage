@@ -7,7 +7,7 @@ name: Deploy Gatsby site to Pages
 on:
   # MicroCMSデプロイ用
   repository_dispatch:
-    types: [microcms]
+    types: ["microcms"]
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
