@@ -12,9 +12,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-env:
-  MICRO_CMS_SERVICE_ID: ${{secrets.MICRO_CMS_SERVICE_ID}}
-  MICRO_CMS_API_KEY: ${{secrets.MICRO_CMS_API_KEY}}
+# env:
+#   MICRO_CMS_SERVICE_ID: ${{secrets.MICRO_CMS_SERVICE_ID}}
+#   MICRO_CMS_API_KEY: ${{secrets.MICRO_CMS_API_KEY}}
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -82,6 +82,8 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
+          MICRO_CMS_SERVICE_ID: ${{secrets.MICRO_CMS_SERVICE_ID}}
+          MICRO_CMS_API_KEY: ${{secrets.MICRO_CMS_API_KEY}}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
