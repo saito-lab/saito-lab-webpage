@@ -7,13 +7,12 @@ name: Deploy Gatsby site to Pages
 on:
   # MicroCMSデプロイ用
   repository_dispatch:
-    types: ["microcms"]
+    types: [microcms]
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    types: ["microcms"]
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
