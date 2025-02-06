@@ -12,10 +12,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# env:
-#   MICRO_CMS_SERVICE_ID: ${{secrets.MICRO_CMS_SERVICE_ID}}
-#   MICRO_CMS_API_KEY: ${{secrets.MICRO_CMS_API_KEY}}
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
