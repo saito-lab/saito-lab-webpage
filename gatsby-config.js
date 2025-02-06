@@ -6,6 +6,7 @@ require('dotenv').config({
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/webpage",
   siteMetadata: {
     title: `SaitoLab`,
     siteUrl: `https://www.yourdomain.tld`
