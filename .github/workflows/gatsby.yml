@@ -36,6 +36,8 @@ defaults:
 jobs:
   # Build job
   build:
+    environment:
+      name: production
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
